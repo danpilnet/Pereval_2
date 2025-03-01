@@ -48,10 +48,10 @@ class Perevals(models.Model):
                       ]
 
     status = models.CharField(db_index=True, choices=CHOICES_STATUS, default='new', max_length=10)
-    beauty_title = models.CharField(blank=True, max_length=20,)
-    title = models.CharField(blank=True, max_length=50)
-    other_titles = models.CharField(blank=True, max_length=50)
-    connect = models.DateTimeField(auto_now=True)
+    beauty_title = models.CharField(max_length=20,)
+    title = models.CharField(max_length=50)
+    other_titles = models.CharField(max_length=50)
+    connect = models.CharField(max_length=254, blank=True)
     add_time = models.DateTimeField(auto_now_add=True)
 
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
